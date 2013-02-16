@@ -8,6 +8,7 @@
 			break;
 		case 'PUT':
 			// update item
+			echo json_encode(array("error"=>"Saving is disabled for this user."));
 			break;
 		case 'DELETE':
 			// delete item
