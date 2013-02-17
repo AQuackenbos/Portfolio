@@ -1,22 +1,22 @@
-(function(){
-	window.Portfolio = {
-		Models: {},
-		Collections: {},
-		Views: {},
-		Router: {}
-	};
+var Portfolio = Ember.Application.create();
 
-	window.template = function(templateId) {
-		return _.template($('#'+templateId).html());
-	};
+Portfolio.ApplicationView = Ember.View.extend({
+	templateName: 'application'
+});
+Portfolio.ApplicationController = Ember.Controller.extend();
 
-	Portfolio.Models.Page = Backbone.Model.extend({
-		urlRoot: '/page'
-	});
+Portfolio.Router.reopen({
+	location: 'history'
+});
 
-	Portfolio.Collections.Pages = Backbone.Collection.extends({
-		model: Portfolio.Models.Page,
-		url: '',
-	});
 
-})();
+Portfolio.IndexView = Ember.View.extend({
+	templateName: 'contributors'
+});
+Portfolio.IndexController = Ember.Controller.extend({
+	test: 'test!'
+});
+
+Portfolio.Router.map(function(){
+
+});

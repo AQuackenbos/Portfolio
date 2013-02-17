@@ -1,4 +1,6 @@
 <?php
+error_log('Request Made'+"\n",3,'log.txt');
+/*
 	switch($_SERVER['REQUEST_METHOD']){
 		case 'POST':
 			// create new item
@@ -15,4 +17,5 @@
 			echo json_encode(array("error"=>"Deleting is disabled for this user."));
 			break;
 	}
+	*/
 ?>

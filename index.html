@@ -7,12 +7,19 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
 	<body>
+		<script type="text/x-handlebars" data-template-name="application">
+		  <h1>Application View</h1>
+		  {{outlet}}
+		</script>
 		
-	
+		<script type="text/x-handlebars" data-template-name="contributors">
+		 INDEX VIEW: {{content.test}}
+		</script>
+		
 		<script src="js/jquery-1.9.1.js"> </script>
 		<script src="js/bootstrap.js"></script>
-		<script src="js/underscore.js"></script> 
-		<script src="js/backbone.js"></script>
+		<script src="js/handlebars.js"></script> 
+		<script src="js/ember.js"></script> 
 		<script src="js/main.js"></script>
 	</body>
 </html>
