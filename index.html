@@ -4,22 +4,40 @@
         <meta charset="utf-8">
 		<title>Andrew Quackenbos: Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
 	<body>
 		<script type="text/x-handlebars" data-template-name="application">
-		  <h1>Application View</h1>
-		  {{outlet}}
+		  <h1>Application View: {{test}}</h1>
+		  <nav>
+			{{#linkTo "index"}}Home{{/linkTo}}
+			{{#linkTo "contributors"}}Contributors{{/linkTo}}
+		  </nav>
+		  <div id="mainoutlet">
+			{{outlet}}
+		  </div>
+		</script>
+		
+		<script type="text/x-handlebars" data-template-name="index">
+			<div>{{title}}</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="contributors">
-		 INDEX VIEW: {{test}}
+		  <ul>
+			{{#each contributor in controller}}
+			  <li>{{#linkTo contributor contributor}} {{contributor.login}} {{/linkTo}}</li>
+			{{/each}}
+		  </ul>
 		</script>
 		
-		<script src="js/jquery-1.9.1.js"> </script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/handlebars.js"></script> 
-		<script src="js/ember.js"></script> 
-		<script src="js/main.js"></script>
+		<script type="text/x-handlebars" data-template-name="contributor">
+		  Contributor: {{login}}, contributions: {{contributions}}
+		</script>
+
+		<script src="/js/jquery-1.9.1.js"> </script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/handlebars.js"></script> 
+		<script src="/js/ember.js"></script> 
+		<script src="/js/main.js"></script>
 	</body>
 </html>
