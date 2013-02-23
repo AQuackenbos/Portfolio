@@ -8,15 +8,15 @@
     </head>
 	<body>
 		<script type="text/x-handlebars" data-template-name="application">
-		  <h1>Andrew Quackenbos</h1>
-		  <h3>Portfolio</h3>
-		  {{partial "nav"}}
-		  <div id="mainoutlet">
-			{{outlet}}
-		  </div>
-		  <div id="footer">
-			{{partial "footer"}}
-		  </div>
+			<h1>Andrew Quackenbos</h1>
+			<h3>Portfolio</h3>
+			{{partial "nav"}}
+			<div id="mainoutlet">
+				{{outlet}}
+			</div>
+			<div id="footer">
+				{{partial "footer"}}
+			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="general">
@@ -24,13 +24,13 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">
-		<div class="nav-collapse collapse">
-		  <ul class="nav">
-			{{#linkTo "about"}}About{{/linkTo}}
-			{{#linkTo "contact"}}Contact{{/linkTo}}
-			{{#linkTo "skills"}}Skills{{/linkTo}}
-		  </ul>
-		</div>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					{{#linkTo "about"}}About{{/linkTo}}
+					{{#linkTo "contact"}}Contact{{/linkTo}}
+					{{#linkTo "skills"}}Skills{{/linkTo}}
+				</ul>
+			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_footer">

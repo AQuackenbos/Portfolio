@@ -12,10 +12,6 @@ $(function(){
 
 var Portfolio = Ember.Application.create();
 
-Portfolio.ApplicationController = Ember.Controller.extend({
-	links: [{id:'about',name:'About'},{id:'contact',name:'Contact'}]
-});
-
 //Force all views to the general template
 Portfolio.IndexView =
 Portfolio.AboutView = 
