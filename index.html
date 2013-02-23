@@ -8,13 +8,14 @@
     </head>
 	<body>
 		<script type="text/x-handlebars" data-template-name="application">
-		  <h1>Application View: {{test}}</h1>
-		  <nav>
-			{{#linkTo "index"}}Home{{/linkTo}}
-			{{#linkTo "contributors"}}Contributors{{/linkTo}}
-		  </nav>
+		  <h1>Andrew Quackenbos</h1>
+		  <h3>Portfolio</h3>
+		  {{partial "nav"}}
 		  <div id="mainoutlet">
 			{{outlet}}
+		  </div>
+		  <div id="footer">
+			{{partial "footer"}}
 		  </div>
 		</script>
 		
@@ -22,21 +23,26 @@
 			<div>{{title}}</div>
 		</script>
 		
-		<script type="text/x-handlebars" data-template-name="contributors">
-		  <ul>
-			{{#each contributor in controller}}
-			  <li>{{#linkTo contributor contributor}} {{contributor.login}} {{/linkTo}}</li>
+		<script type="text/x-handlebars" data-template-name="_nav">
+		<div class="nav-collapse collapse">
+		  <ul class="nav">
+			{{#each link in controller.links}}
+				<a {{bindAttr href="link.id"}}>{{link.name}}</a>
 			{{/each}}
 		  </ul>
+		</div>
 		</script>
 		
-		<script type="text/x-handlebars" data-template-name="contributor">
-		  Contributor: {{login}}, contributions: {{contributions}}
+		<script type="text/x-handlebars" data-template-name="_footer">
+			FOOTER!
 		</script>
 
 		<script src="/js/jquery-1.9.1.js"> </script>
 		<script src="/js/bootstrap.js"></script>
 		<script src="/js/handlebars.js"></script> 
+		<script type="text/javascript">
+			//Handlebars.registerPartial("footer", $("#footer-partial").html());
+		</script>
 		<script src="/js/ember.js"></script> 
 		<script src="/js/main.js"></script>
 	</body>

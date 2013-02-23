@@ -1,46 +1,46 @@
 var Portfolio = Ember.Application.create();
 
+$.ajax({
+	url: '/data/data.json',
+	dataType: 'json',
+	success: function(r){
+		window.loadedData = r;
+	}
+});
+
 Portfolio.ApplicationController = Ember.Controller.extend({
-	test: "Test!"
+	links: [{id:'about',name:'About'},{id:'contact',name:'Contact'}]
 });
 
 Portfolio.Router.reopen({
 	location: 'history'
 });
 
-
-Portfolio.IndexRoute = Ember.Route.extend({
-	setupController: function(controller){
-		controller.set('title',"Better title...");
-	}
-});
-
 Portfolio.Router.map(function(){
-	this.route('contributors');
-	this.route('contributor', {path: '/contributors/:contributor_id'});
+	this.route('about');
+	this.route('contact');
 });
 
-Portfolio.Contributor = Ember.Object.extend();
-Portfolio.Contributor.reopenClass({
-  allContributors: [],
+
+
+/*
+Portfolio.Page = Ember.Object.extend();
+Portfolio.Page.reopenClass({
+  allPages: [],
   all: function(){
-    this.allContributors = [];
+	console.log('all called');
+    this.allPages = [];
     $.ajax({
-      url: '/js/test.json',
+      url: '/data/pages.json',
       dataType: 'json',
       context: this,
       success: function(response){
-        response.forEach(function(contributor){
-          this.allContributors.addObject(Portfolio.Contributor.create(contributor))
+        response.forEach(function(page){
+          this.allPages.addObject(Portfolio.Page.create(page))
         }, this)
       }
     })
-    return this.allContributors;
+    return this.allPages;
   }
 });
-
-Portfolio.ContributorsRoute = Ember.Route.extend({
-	model: function() {
-		return Portfolio.Contributor.all();
-	}
-});
+*/
