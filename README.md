@@ -1,4 +1,4 @@
 Portfolio
 =========
 
-A portfolio for my work, built with Backbone.js
+A portfolio for my work, built with Ember.js
