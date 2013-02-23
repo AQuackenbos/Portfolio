@@ -19,16 +19,16 @@
 		  </div>
 		</script>
 		
-		<script type="text/x-handlebars" data-template-name="index">
+		<script type="text/x-handlebars" data-template-name="general">
 			<div>{{title}}</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">
 		<div class="nav-collapse collapse">
 		  <ul class="nav">
-			{{#each link in controller.links}}
-				<a {{bindAttr href="link.id"}}>{{link.name}}</a>
-			{{/each}}
+			{{#linkTo "about"}}About{{/linkTo}}
+			{{#linkTo "contact"}}Contact{{/linkTo}}
+			{{#linkTo "skills"}}Skills{{/linkTo}}
 		  </ul>
 		</div>
 		</script>

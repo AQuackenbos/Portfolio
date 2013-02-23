@@ -1,21 +1,31 @@
 {
-	data: 
-	{
-		about: {
-			items: [
+	"data": {
+		"about": {
+			"title": "About Me",
+			"items": [
 				{
-					id: '',
+					"id": "about"
 				}
 			]
 		},
-		
-		contact: {
-			items: [
+		"contact": {
+			"title": "Contact Me",
+			"description": ".. (html)",
+			"items": [
 				{
-					id: '',
+					"id": "item_id",
+					"icon": "images/icon.img",
+					"title": "Item Title",
+					"preview": "Short Description <span>HTML</span>",
+					"description": "Full Description <span>HTML</span>",
+					"images": [
+						"images/img1.img",
+						"images/img2.img"
+					],
+					"previewClass": "special-class",
+					"descriptionClass": "special-class"
 				}
 			]
 		}
-	
 	}
 }
