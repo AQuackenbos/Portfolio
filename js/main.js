@@ -12,7 +12,18 @@ $(function(){
 
 var Portfolio = Ember.Application.create();
 
-//Force all views to the general template
+Portfolio.Pages = Ember.Object.extend({});
+Portfolio.Pages.reopen({
+	allPages: [],
+	find: function(page_id) {
+		return null;
+	}
+});
+
+Portfolio.ApplicationController = Ember.Controller.extend({
+	leftImage: "left-image.jpg"
+});
+
 Portfolio.IndexView =
 Portfolio.AboutView = 
 Portfolio.ContactView = 
@@ -23,9 +34,13 @@ Ember.View.extend({
 
 Ember.Route.reopen({
   model: function() {
+		return Portfolio.Pages.find(this.routeName);
 	if(this.routeName == 'index') return window.loadedData['about'];
     return window.loadedData[this.routeName];
   },
+  setupController: function(controller, model) {
+	controller.set('content',model);
+  }
 });
 
 Portfolio.Router.reopen({

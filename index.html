@@ -12,33 +12,46 @@
 			<div class="navbar navbar-fixed-top navbar-inverse">
 				{{partial "nav"}}
 			</div>
-			<div id="left" class="column">
-				{{partial "left"}}
-			</div>
-			<div id="content" class="column">
-				{{outlet}}
-			</div>
-			<div id="footer">
-				{{partial "footer"}}
+			<div class=" class="container-fluid fill">
+				<div class="row-fluid">
+					<div class="span2">
+						{{partial "left"}}
+					</div>
+					<div class="span10 filler" id="content">
+						{{outlet}}
+						<div id="footer">
+							{{partial "footer"}}
+						</div>
+					</div>
+				</div>
 			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="general">
-			<div>{{title}}</div>
+			TEST: {{content.title}}
+			
+			{{#if title}}
+				<h3>{{title}}</h3>
+			{{else}}
+				<h5>...Loading...</h5>
+			{{/if}}
+			<p>{{description}}</p>
+			{{#if items}}
+				<ul>
+				{{#each item in items}}
+					<li>{{item.id}}</li>
+				{{/each}}
+				</ul>
+			{{/if}}
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_left">
-			-LEFT-
+		(left)
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">
 			<div class="navbar-inner">
 				<div class="container-fluid">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
 					<div class="nav-collapse">
 						<ul class="nav">
 							<li class="name">{{#linkTo "about"}}Andrew Quackenbos{{/linkTo}}</li>
