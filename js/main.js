@@ -1,3 +1,6 @@
+var Portfolio = Ember.Application.create();
+Portfolio.deferReadiness();
+
 $(function(){
 	window.loadedData = {};
 
@@ -6,14 +9,13 @@ $(function(){
 		dataType: 'json',
 		success: function(r){
 			window.loadedData = r.data;
+			Portfolio.advanceReadiness();
 		}
 	});
 });
 
-var Portfolio = Ember.Application.create();
-
 Portfolio.Pages = Ember.Object.extend({});
-Portfolio.Pages.reopen({
+Portfolio.Pages.reopenClass({
 	allPages: [],
 	find: function(page_id) {
 		return null;
@@ -34,7 +36,6 @@ Ember.View.extend({
 
 Ember.Route.reopen({
   model: function() {
-		return Portfolio.Pages.find(this.routeName);
 	if(this.routeName == 'index') return window.loadedData['about'];
     return window.loadedData[this.routeName];
   },
@@ -42,10 +43,12 @@ Ember.Route.reopen({
 	controller.set('content',model);
   }
 });
-
-Portfolio.Router.reopen({
-	location: 'history'
-});
+if(navigator.appName != "Microsoft Internet Explorer")
+{
+	Portfolio.Router.reopen({
+		location: 'history'
+	});
+}
 
 Portfolio.Router.map(function(){
 	this.route('about');
