@@ -31,7 +31,10 @@ Portfolio.AboutView =
 Portfolio.ContactView = 
 Portfolio.SkillsView = 
 Ember.View.extend({
-	templateName: "general"
+	templateName: "general",
+    didInsertElement: function(){
+        this.$().hide().fadeIn('slow');
+    }
 });
 
 Ember.Route.reopen({

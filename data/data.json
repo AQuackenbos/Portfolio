@@ -16,8 +16,14 @@
 					"preview": "Short Description <span>HTML</span>",
 					"description": "Full Description <span>HTML</span>",
 					"images": [
-						"images/img1.img",
-						"images/img2.img"
+						{
+							"image":"images/img1.img",
+							"link":"false"
+						},
+						{
+							"image":"images/img2.img",
+							"link":"false"
+						}
 					],
 					"previewClass": "special-class",
 					"descriptionClass": "special-class"
