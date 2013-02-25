@@ -3,7 +3,71 @@
 		"about": {
 			"title": "About Me",
 			"description": "Proin pulvinar nibh nec sapien commodo consectetur pellentesque nisl facilisis. Pellentesque nec elit ante. Vivamus pulvinar lacinia luctus. Morbi eu nisi at ipsum ultricies ultrices. In hac habitasse platea dictumst. Ut quis erat ut enim egestas placerat quis et orci. Donec id sem nec sem aliquam egestas. Proin in mi lectus. Cras a pellentesque neque. In in accumsan nisi. Praesent condimentum, erat sodales tincidunt porttitor, turpis diam eleifend dolor, sit amet condimentum massa neque non nisl.",
-			"items": []
+			"items": [
+				{
+					"id": "google_plus",
+					"icon": "images/icons/gplus.png",
+					"title": "Google+: Andrew Quackenbos",
+					"preview": "Google+",
+					"fallback": "https://plus.google.com/104721062711626400467/"
+				},
+				{
+					"id": "linkedin",
+					"icon": "images/icons/linkedin.png",
+					"title": "LinkedIn: Andrew Quackenbos",
+					"preview": "LinkedIn",
+					"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
+				},
+				{
+					"id": "facebook",
+					"icon": "images/icons/facebook.png",
+					"title": "Facebook: AQuackenbos",
+					"preview": "Facebook",
+					"fallback": "https://facebook.com/AQuackenbos"
+				},
+				{
+					"id": "reddit",
+					"icon": "images/icons/reddit.png",
+					"title": "reddit: NovaX81",
+					"preview": "reddit",
+					"fallback": "http://reddit.com/user/novax81"
+				},
+				{
+					"id": "github",
+					"icon": "images/icons/github.png",
+					"title": "Github: AQuackenbos",
+					"preview": "Github",
+					"fallback": "https://github.com/AQuackenbos"
+				},
+				{	
+					"id": "twitter",
+					"icon": "images/icon/twitter.png",
+					"title": "Twitter: AQuackenbos",
+					"preview": "Twitter",
+					"fallback": "https://twitter.com/aquackenbos"
+				},
+				{
+					"id": "youtube",
+					"icon": "images/icon/youtube.png",
+					"title": "YouTube: NovaX81",
+					"preview": "YouTube",
+					"fallback": "http://www.youtube.com/user/NovaX81"
+				},
+				{
+					"id": "stack_overflow",
+					"icon": "images/icon/stackoverflow.png",
+					"title": "stackoverflow: Andrew Quackenbos",
+					"preview": "stackoverflow",
+					"fallback": "http://stackoverflow.com/users/479830/andrew-quackenbos"
+				},
+				{
+					"id": "steam",
+					"icon": "images/icon/steam.png",
+					"title": "Steam: NovaX81",
+					"preview": "Steam",
+					"fallback": "http://steamcommunity.com/id/novax81"
+				}
+			]
 		},
 		"contact": {
 			"title": "Contact Me",
@@ -14,6 +78,7 @@
 					"icon": "images/icon.img",
 					"title": "Item Title",
 					"preview": "Short Description <span>HTML</span>",
+					"fallback": "http://fallbackurl.com/",
 					"description": "Full Description <span>HTML</span>",
 					"images": [
 						{
