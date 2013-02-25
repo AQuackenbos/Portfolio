@@ -43,6 +43,7 @@ Ember.Route.reopen({
 	controller.set('content',model);
   }
 });
+
 if(navigator.appName != "Microsoft Internet Explorer")
 {
 	Portfolio.Router.reopen({
