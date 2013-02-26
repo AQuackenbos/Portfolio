@@ -37,10 +37,14 @@
 			{{#if items}}
 				<ul>
 				{{#each item in items}}
-					<li>{{item.id}}</li>
+					{{view Portfolio.ItemView itemBinding="item"}}
 				{{/each}}
 				</ul>
 			{{/if}}
+		</script>
+		
+		<script type="text/x-handlebars" data-template-name="item">
+			<li><a href="http://gooogle.com">{{item.title}}</a></li>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_left">

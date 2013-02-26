@@ -1,3 +1,5 @@
+window.isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
+
 var Portfolio = Ember.Application.create();
 Portfolio.deferReadiness();
 
@@ -35,6 +37,17 @@ Ember.View.extend({
     didInsertElement: function(){
         this.$().hide().fadeIn('slow');
     }
+});
+
+Portfolio.ItemView = Ember.View.extend({
+	item: null,
+	templateName: "item",
+	click: function(e){
+		e.preventDefault();
+		alert("!");
+		console.log(this);
+		console.log(e);
+	}
 });
 
 Ember.Route.reopen({
