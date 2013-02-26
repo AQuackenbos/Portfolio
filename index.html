@@ -44,11 +44,28 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="item">
-			<li><a href="http://gooogle.com">{{item.title}}</a></li>
+			<li {{bindAttr class="item.previewClass"}}>
+				<a {{bindAttr href="item.fallback"}}>
+					{{#if item.icon}}
+						<div class="item-image">
+							<img {{bindAttr src="item.icon"}}/>
+						</div>
+					{{/if}}
+					<div class="item-preview">
+						{{#if item.title}}
+							<span class="item-title">{{item.title}}</span>
+							<br />
+						{{/if}}
+						{{#if item.preview}}
+							<span class="item-desc">{{item.preview}}</span>
+						{{/if}}
+					</div>
+				</a>
+			</li>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_left">
-		(left)
+			(left)
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">

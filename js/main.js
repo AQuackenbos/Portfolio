@@ -28,6 +28,24 @@ Portfolio.ApplicationController = Ember.Controller.extend({
 	leftImage: "left-image.jpg"
 });
 
+
+Portfolio.ItemView = Ember.View.extend({
+	item: null,
+	templateName: "item",
+	click: function(e){
+		if(window.isMobile || !this.item.description) {
+			window.location.href = this.item.fallback;
+			return;
+		}
+		
+		e.preventDefault();
+		this._openDescription();
+	},
+	_openDescription: function(){
+		console.log("..opening description..");
+	}
+});
+
 Portfolio.IndexView =
 Portfolio.AboutView = 
 Portfolio.ContactView = 
@@ -37,17 +55,6 @@ Ember.View.extend({
     didInsertElement: function(){
         this.$().hide().fadeIn('slow');
     }
-});
-
-Portfolio.ItemView = Ember.View.extend({
-	item: null,
-	templateName: "item",
-	click: function(e){
-		e.preventDefault();
-		alert("!");
-		console.log(this);
-		console.log(e);
-	}
 });
 
 Ember.Route.reopen({
