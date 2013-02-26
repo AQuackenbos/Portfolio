@@ -17,30 +17,29 @@
 					<div class="span2">
 						{{partial "left"}}
 					</div>
-					<div class="span10 filler" id="content">
 						{{outlet}}
-						<div id="footer">
-							{{partial "footer"}}
-						</div>
-					</div>
 				</div>
 			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="general">
-			{{#if title}}
-				<h3>{{title}}</h3>
-			{{else}}
-				<h5>...Loading...</h5>
-			{{/if}}
-			<p>{{description}}</p>
-			{{#if items}}
-				<ul>
-				{{#each item in items}}
-					{{view Portfolio.ItemView itemBinding="item"}}
-				{{/each}}
-				</ul>
-			{{/if}}
+			<div class="span10 filler" {{bindAttr id="id"}}>
+				{{#if title}}
+					<h3>{{title}}</h3>
+				{{else}}
+					<h5>...Loading...</h5>
+				{{/if}}
+				<p>{{description}}</p>
+				{{#if items}}
+					<ul>
+					{{#each item in items}}
+						{{view Portfolio.ItemView itemBinding="item"}}
+					{{/each}}
+					</ul>
+				{{/if}}
+				<div id="footer">
+					{{partial "footer"}}
+			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="item">
@@ -85,7 +84,8 @@
 		<script type="text/x-handlebars" data-template-name="_footer">
 			This page was created by Andrew Quackenbos, using <a href="http://emerjs.com">Ember.js</a>, 
 			<a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and <a href="http://handlebarsjs.com/">Handlebars</a>.  
-			The code is available at <a href="https://github.com/AQuackenbos/Portfolio">Github</a>.
+			The code is available at <a href="https://github.com/AQuackenbos/Portfolio">Github</a>.<br />
+			Icons adapted from <a href="http://www.iconfinder.com/search/?q=iconset%3Ametro-uinvert-dock">metro-univert-dock</a>.
 		</script>
 
 		<script src="/js/jquery-1.9.1.js"> </script>
