@@ -2,8 +2,13 @@ html {
 	height: 100%;
 }
 body {
-	padding-top: 60px;
 	height: 100%;
+}
+
+@media (min-width: 1200px) {
+	body {
+		padding-top: 60px;
+	}
 }
 
 .fill { 
@@ -31,9 +36,34 @@ body {
 	font-size: 0.8em;
 }
 
+ul.item-list {
+	list-style:none;
+}
+
+ul.item-list li {
+    -webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+}
+
 div.item-image {
 	background-color: #333;
 	border-radius: 5px;
 	height: 50px;
 	width: 50px;
+    -webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+}
+
+ul.item-list li:hover {
+	background-color: #ccc;
+}
+
+ul.item-list li:hover div.item-image{
+	background-color: rgb(25,55,210);
 }

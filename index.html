@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-		<title>Andrew Quackenbos: Portfolio</title>
+		<title>Andrew Quackenbos | Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 		<link href="/css/main.css" rel="stylesheet">
     </head>
 	<body>
@@ -12,17 +13,18 @@
 			<div class="navbar navbar-fixed-top navbar-inverse">
 				{{partial "nav"}}
 			</div>
-			<div class=" class="container-fluid fill">
-				<div class="row-fluid">
+			<div class="container fill">
+				<div class="row">
 					<div class="span2">
 						{{partial "left"}}
 					</div>
-						{{outlet}}
+					{{outlet}}
 				</div>
 			</div>
 		</script>
 		
-		<script type="text/x-handlebars" data-template-name="general">
+		<script type="text/x-handlebars" data-template-name="page">
+			{{#view Portfolio.FadeInView contentBinding="this"}}
 			<div class="span10 filler" {{bindAttr id="id"}}>
 				{{#if title}}
 					<h3>{{title}}</h3>
@@ -31,7 +33,7 @@
 				{{/if}}
 				<p>{{description}}</p>
 				{{#if items}}
-					<ul>
+					<ul class="item-list">
 					{{#each item in items}}
 						{{view Portfolio.ItemView itemBinding="item"}}
 					{{/each}}
@@ -40,13 +42,14 @@
 				<div id="footer">
 					{{partial "footer"}}
 			</div>
+			{{/view}}
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="item">
 			<li {{bindAttr class="item.previewClass"}}>
 				<a {{bindAttr href="item.fallback"}}>
 					{{#if item.icon}}
-						<div class="item-image">
+						<div class="item-image" {{bindAttr id="item.id"}}>
 							<img {{bindAttr src="item.icon"}}/>
 						</div>
 					{{/if}}
@@ -64,19 +67,18 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_left">
-			(left)
+			(_left)
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">
 			<div class="navbar-inner">
-				<div class="container-fluid">
-					<div class="nav-collapse">
-						<ul class="nav">
-							<li class="name">{{#linkTo "about"}}Andrew Quackenbos{{/linkTo}}</li>
-							<li>{{#linkTo "contact"}}Contact{{/linkTo}}</li>
-							<li>{{#linkTo "skills"}}Skills{{/linkTo}}</li>
-						</ul>
-					</div>
+				<div class="container">
+					<ul class="nav">
+						<li class="name">{{#linkTo "index"}}Andrew Quackenbos{{/linkTo}}</li>
+						{{#each model}}
+							<li>{{#linkTo "page" this}}{{title}}{{/linkTo}}</li>
+						{{/each}}
+					</ul>
 				</div>
 			</div>
 		</script>
