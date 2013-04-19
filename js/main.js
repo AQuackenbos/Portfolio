@@ -1,17 +1,5 @@
 window.isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
 
-/**
-SEE: http://ember101.com/videos/004-master-detail-router-outlet-linkto
-
-RESTRUCTURE... as
-route resource page, page/:page_id (or maybe just /:page_id ?)
-pages array contains data exactly as now (from data.json)
-
-Ignore views, use activate/deactivate logic in Route
-
-
-**/
-
 //============ Core Setup
 
 var Portfolio = Ember.Application.create();
@@ -52,7 +40,7 @@ Portfolio.ApplicationRoute = Ember.Route.extend({
 
 Portfolio.IndexRoute = Ember.Route.extend({
 	model: function(params) {
-		this.transitionTo('page',Portfolio.Pages.find('about'));
+		this.transitionTo('page',Portfolio.Pages.find('contact'));
 	},
     renderTemplate: function() {
         this.render('page', {
@@ -63,7 +51,7 @@ Portfolio.IndexRoute = Ember.Route.extend({
 
 Portfolio.PageRoute = Ember.Route.extend({
 	model: function(params) {
-		if(params.page_id == 'undefined') return Portfolio.Pages.find('about'); 
+		if(params.page_id == 'undefined') return Portfolio.Pages.find('contact'); 
 		return Portfolio.Pages.find(params.page_id);
 	},
 	setupController: function(controller, model) {

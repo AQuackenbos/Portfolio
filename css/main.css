@@ -67,3 +67,41 @@ ul.item-list li:hover {
 ul.item-list li:hover div.item-image{
 	background-color: rgb(25,55,210);
 }
+
+/** Specific Entry Backgrounds */
+
+ul.item-list li:hover div#google_plus, ul.item-list li:hover div#youtube {
+	background-color: rgb(210,25,25);
+}
+
+ul.item-list li:hover div#linkedin {
+	background-color: rgb(20,100,185);
+}
+
+ul.item-list li:hover div#facebook {
+	background-color: rgb(30,45,125);
+}
+
+ul.item-list li:hover div#github, ul.item-list li:hover div#steam {
+	background-color: rgb(0,0,0);
+}
+
+ul.item-list li:hover div#twitter, ul.item-list li:hover div#skype {
+	background-color: rgb(40,185,185);
+}
+
+ul.item-list li:hover div#stack_overflow {
+	background-color: rgb(215,100,50);
+}
+
+ul.item-list li:hover div#blog, ul.item-list li:hover div#personal_blog {
+	background-color: rgb(30,140,190);
+}
+
+ul.item-list li:hover div#reddit {
+	background-color: rgb(130,170,200);
+}
+
+ul.item-list li:hover div#aim {
+	background-color: rgb(240,220,70);
+}
