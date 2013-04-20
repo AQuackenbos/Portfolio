@@ -34,6 +34,8 @@ body {
 
 #footer {
 	font-size: 0.8em;
+	padding-top:10px;
+	clear:both;
 }
 
 ul.item-list {
@@ -68,7 +70,18 @@ ul.item-list li:hover div.item-image{
 	background-color: rgb(25,55,210);
 }
 
+
+#about ul.item-list li, #contact ul.item-list li, #personal ul.item-list li {
+	width: 50px;
+	float: left;
+}
+
+#about ul.item-list li div.item-preview, #contact ul.item-list li div.item-preview, #personal ul.item-list li div.item-preview {
+	display:none;
+}
+
 /** Specific Entry Backgrounds */
+/** ROUGH ESTIMATES on colors for now ... */
 
 ul.item-list li:hover div#google_plus, ul.item-list li:hover div#youtube {
 	background-color: rgb(210,25,25);
