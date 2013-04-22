@@ -70,6 +70,9 @@ Portfolio.FadeInView = Ember.View.extend({
 Portfolio.ItemView = Ember.View.extend({
 	item: null,
 	templateName: "item",
+	previewClass: function() {
+		return "item-preview "+item.previewClass;
+	},
 	click: function(e){
 		if(window.isMobile || !this.item.description) {
 			window.location.href = this.item.fallback;

@@ -75,6 +75,23 @@
 			]
 		},
 		{
+			"id": "skills",
+			"title": "Skills",
+			"description": "...",
+			"items": [
+				{
+					"id": "php",
+					"icon": "img/icons/php.png",
+					"title": "PHP",
+					"fallback": "#"
+				}
+			]
+		},
+		{
+			"id": "experience",
+			"title": "Experience & Education"
+		},
+		{
 			"id": "personal",
 			"title": "Personal",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",

@@ -37,6 +37,9 @@ body {
 	padding-top:10px;
 	clear:both;
 }
+.navbar-inverse .nav>li>a.active {
+	color: #fff;
+}
 
 ul.item-list {
 	list-style:none;
@@ -70,15 +73,20 @@ ul.item-list li:hover div.item-image{
 	background-color: rgb(25,55,210);
 }
 
+/* Icon-based entries */
 
 #about ul.item-list li, #contact ul.item-list li, #personal ul.item-list li {
 	width: 50px;
 	float: left;
+	margin: 0px 10px;
 }
 
 #about ul.item-list li div.item-preview, #contact ul.item-list li div.item-preview, #personal ul.item-list li div.item-preview {
 	display:none;
 }
+
+/* Full list entries */
+
 
 /** Specific Entry Backgrounds */
 /** ROUGH ESTIMATES on colors for now ... */
