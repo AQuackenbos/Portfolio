@@ -4,24 +4,29 @@
 			"id": "contact",
 			"title": "Contact Me",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",
-			"items": [
+			"itemGroups": [
 				{
-					"id": "email",
-					"icon": "img/icons/email.png",
-					"title": "Email",
-					"fallback": "mailto:a.quackenbos@gmail.com"
-				},
-				{
-					"id": "skype",
-					"icon": "img/icons/skype.png",
-					"title": "Skype",
-					"fallback": "skype:aquackenbos?add"
-				},
-				{
-					"id": "aim",
-					"icon": "img/icons/aim.png",
-					"title": "AIM",
-					"fallback": "aim:goim?screenname=novax81"
+					"id": "contact",
+					"items": [
+						{
+							"id": "email",
+							"icon": "img/icons/email.png",
+							"title": "Email",
+							"fallback": "mailto:a.quackenbos@gmail.com"
+						},
+						{
+							"id": "skype",
+							"icon": "img/icons/skype.png",
+							"title": "Skype",
+							"fallback": "skype:aquackenbos?add"
+						},
+						{
+							"id": "aim",
+							"icon": "img/icons/aim.png",
+							"title": "AIM",
+							"fallback": "aim:goim?screenname=novax81"
+						}
+					]
 				}
 			]
 		},
@@ -29,61 +34,79 @@
 			"id": "about",
 			"title": "About Me",
 			"description": "Proin pulvinar nibh nec sapien commodo consectetur pellentesque nisl facilisis. Pellentesque nec elit ante. Vivamus pulvinar lacinia luctus. Morbi eu nisi at ipsum ultricies ultrices. In hac habitasse platea dictumst. Ut quis erat ut enim egestas placerat quis et orci. Donec id sem nec sem aliquam egestas. Proin in mi lectus. Cras a pellentesque neque. In in accumsan nisi. Praesent condimentum, erat sodales tincidunt porttitor, turpis diam eleifend dolor, sit amet condimentum massa neque non nisl.",
-			"items": [
+			"itemGroups": [
 				{
-					"id": "google_plus",
-					"icon": "img/icons/gplus.png",
-					"title": "Google+",
-					"fallback": "https://plus.google.com/104721062711626400467/"
-				},
-				{
-					"id": "linkedin",
-					"icon": "img/icons/linkedin.png",
-					"title": "LinkedIn",
-					"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
-				},
-				{
-					"id": "facebook",
-					"icon": "img/icons/facebook.png",
-					"title": "Facebook",
-					"fallback": "https://facebook.com/AQuackenbos"
-				},
-				{
-					"id": "github",
-					"icon": "img/icons/github.png",
-					"title": "Github",
-					"fallback": "https://github.com/AQuackenbos"
-				},
-				{	
-					"id": "twitter",
-					"icon": "img/icons/twitter.png",
-					"title": "Twitter",
-					"fallback": "https://twitter.com/aquackenbos"
-				},
-				{
-					"id": "stack_overflow",
-					"icon": "img/icons/stackoverflow.png",
-					"title": "stackoverflow",
-					"fallback": "http://stackoverflow.com/users/479830/andrew-quackenbos"
-				},
-				{
-					"id": "blog",
-					"icon": "img/icons/wordpress.png",
-					"title": "Blog",
-					"fallback": "http://blog.quackenbos.info/"
-				}
+					"id": "about",
+					"items": [
+						{
+							"id": "google_plus",
+							"icon": "img/icons/gplus.png",
+							"title": "Google+",
+							"fallback": "https://plus.google.com/104721062711626400467/"
+						},
+						{
+							"id": "linkedin",
+							"icon": "img/icons/linkedin.png",
+							"title": "LinkedIn",
+							"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
+						},
+						{
+							"id": "facebook",
+							"icon": "img/icons/facebook.png",
+							"title": "Facebook",
+							"fallback": "https://facebook.com/AQuackenbos"
+						},
+						{
+							"id": "github",
+							"icon": "img/icons/github.png",
+							"title": "Github",
+							"fallback": "https://github.com/AQuackenbos"
+						},
+						{	
+							"id": "twitter",
+							"icon": "img/icons/twitter.png",
+							"title": "Twitter",
+							"fallback": "https://twitter.com/aquackenbos"
+						},
+						{
+							"id": "stack_overflow",
+							"icon": "img/icons/stackoverflow.png",
+							"title": "stackoverflow",
+							"fallback": "http://stackoverflow.com/users/479830/andrew-quackenbos"
+						},
+						{
+							"id": "blog",
+							"icon": "img/icons/wordpress.png",
+							"title": "Blog",
+							"fallback": "http://blog.quackenbos.info/"
+						}
+					]
+					}
 			]
 		},
 		{
 			"id": "skills",
-			"title": "Skills",
+			"title": "Skills & Certifications",
 			"description": "...",
-			"items": [
+			"itemGroups": [
 				{
-					"id": "php",
-					"icon": "img/icons/php.png",
-					"title": "PHP",
-					"fallback": "#"
+					"id": "skills",
+					"title": "Skills",
+					"description": "..!",
+					"items": [
+						{
+							"id": "php",
+							"icon": "img/icons/php.png",
+							"title": "PHP",
+							"fallback": "#"
+						}
+					]
+				},
+				{
+					"id": "certifications",
+					"title": "Certifications",
+					"description": "..?",
+					"items": []
 				}
 			]
 		},
@@ -95,30 +118,35 @@
 			"id": "personal",
 			"title": "Personal",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",
-			"items": [
+			"itemGroups": [
 				{
-					"id": "youtube",
-					"icon": "img/icons/youtube.png",
-					"title": "YouTube",
-					"fallback": "http://www.youtube.com/user/NovaX81"
-				},
-				{
-					"id": "reddit",
-					"icon": "img/icons/reddit.png",
-					"title": "reddit",
-					"fallback": "http://reddit.com/user/novax81"
-				},
-				{
-					"id": "steam",
-					"icon": "img/icons/steam.png",
-					"title": "Steam",
-					"fallback": "http://steamcommunity.com/id/novax81"
-				},
-				{
-					"id": "personal_blog",
-					"icon": "img/icons/wordpress.png",
-					"title": "Personal Blog",
-					"fallback": "http://novax81.com/"
+					"id": "personal",
+					"items": [
+						{
+							"id": "youtube",
+							"icon": "img/icons/youtube.png",
+							"title": "YouTube",
+							"fallback": "http://www.youtube.com/user/NovaX81"
+						},
+						{
+							"id": "reddit",
+							"icon": "img/icons/reddit.png",
+							"title": "reddit",
+							"fallback": "http://reddit.com/user/novax81"
+						},
+						{
+							"id": "steam",
+							"icon": "img/icons/steam.png",
+							"title": "Steam",
+							"fallback": "http://steamcommunity.com/id/novax81"
+						},
+						{
+							"id": "personal_blog",
+							"icon": "img/icons/wordpress.png",
+							"title": "Personal Blog",
+							"fallback": "http://novax81.com/"
+						}
+					]
 				}
 			]
 		}

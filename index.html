@@ -10,12 +10,12 @@
     </head>
 	<body>
 		<script type="text/x-handlebars" data-template-name="application">
-			<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar navbar-fixed-top navbar-inverse" id="page-nav" style="display:none">
 				{{partial "nav"}}
 			</div>
 			<div class="container fill">
 				<div class="row">
-					<div class="span2">
+					<div class="span2" id="col-left" style="display:none">
 						{{partial "left"}}
 					</div>
 					{{outlet}}
@@ -23,8 +23,16 @@
 			</div>
 		</script>
 		
+		<script type="text/x-handlebars" data-template-name="index">
+			<div id="index-container">
+				<div id="center-name">{{#linkTo "index"}}Andrew Quackenbos{{/linkTo}}</div>
+				{{#each model}}
+					<div class="center-link" {{bindAttr id="id"}}>{{#linkTo "page" this}}{{title}}{{/linkTo}}</div>
+				{{/each}}
+			</div>
+		</script>
+		
 		<script type="text/x-handlebars" data-template-name="page">
-			{{#view Portfolio.FadeInView contentBinding="this"}}
 			<div class="span10 filler" {{bindAttr id="id"}}>
 				{{#if title}}
 					<h3>{{title}}</h3>
@@ -32,17 +40,28 @@
 					<h5>...Loading...</h5>
 				{{/if}}
 				<p>{{description}}</p>
-				{{#if items}}
-					<ul class="item-list">
-					{{#each item in items}}
-						{{view Portfolio.ItemView itemBinding="item"}}
+				{{#if itemGroups}}
+					{{#each group in itemGroups}}
+						<div class="group">
+						{{#if group.title}}
+							<h4 class="title">{{group.title}}</h4>
+						{{/if}}
+						{{#if group.description}}
+							<p class="description">{{group.description}}</p>
+						{{/if}}
+						{{#if group.items}}
+							<ul class="item-list">
+							{{#each item in group.items}}
+								{{view Portfolio.ItemView itemBinding="item"}}
+							{{/each}}
+							</ul>
+						{{/if}}
+						</div>
 					{{/each}}
-					</ul>
 				{{/if}}
 				<div id="footer">
 					{{partial "footer"}}
 			</div>
-			{{/view}}
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="item">

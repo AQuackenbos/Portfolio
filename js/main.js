@@ -40,13 +40,14 @@ Portfolio.ApplicationRoute = Ember.Route.extend({
 
 Portfolio.IndexRoute = Ember.Route.extend({
 	model: function(params) {
-		this.transitionTo('page',Portfolio.Pages.find('contact'));
+		return Portfolio.Pages.allPages;
 	},
-    renderTemplate: function() {
-        this.render('page', {
-            into: 'application'
-        })
-    }
+	activate: function() {
+		console.log('Index');
+	},
+	deactivate: function() {
+		console.log('End Index');
+	}
 });
 
 Portfolio.PageRoute = Ember.Route.extend({
@@ -56,13 +57,27 @@ Portfolio.PageRoute = Ember.Route.extend({
 	},
 	setupController: function(controller, model) {
 		controller.set('content',model);
+	},
+	activate: function() {
+		console.log('Page');
+	},
+	deactivate: function() {
+		console.log('End Page');
 	}
 });
 
 //============ Views
 
-Portfolio.FadeInView = Ember.View.extend({
+Portfolio.IndexView = Ember.View.extend({
     didInsertElement: function(){
+		$('#page-nav,#col-left').fadeOut('fast');
+		Portfolio.indexSetup();
+    }
+});
+
+Portfolio.PageView = Ember.View.extend({
+    didInsertElement: function(){
+		$('#page-nav,#col-left').fadeIn('fast');
         this.$().hide().fadeIn('slow');
     }
 });
@@ -99,6 +114,19 @@ if(navigator.appName != "Microsoft Internet Explorer")
 Portfolio.Router.map(function(){
 	this.resource('page',{path:'/:page_id'});
 });
+
+//============ Index Setup
+
+Portfolio.indexSetup = function() {
+	console.log('Setting up index page');
+	console.log('#center-name: '+$('#center-name').size());
+	
+	/* Move circle to center */
+	/* "bounce" each link into position, sequentially maybe? */
+	/* set up an animation behind each link maybe? */
+	/* set a resize listener to keep everything in place */
+}
+
 
 //============ Onload jQuery
 
