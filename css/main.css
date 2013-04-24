@@ -3,6 +3,7 @@ html {
 }
 body {
 	height: 100%;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -91,16 +92,20 @@ ul.item-list li:hover div.item-image{
 /** Specific Entry Backgrounds */
 /** ROUGH ESTIMATES on colors for now ... */
 
-ul.item-list li:hover div#google_plus, ul.item-list li:hover div#youtube {
+ul.item-list li:hover div#google_plus {
 	background-color: rgb(210,25,25);
 }
 
+ul.item-list li:hover div#youtube  {
+	background-color: rgb(160,40,40);
+}
+
 ul.item-list li:hover div#linkedin {
-	background-color: rgb(20,100,185);
+	background-color: rgb(100,175,210);
 }
 
 ul.item-list li:hover div#facebook {
-	background-color: rgb(30,45,125);
+	background-color: rgb(60,90,150);
 }
 
 ul.item-list li:hover div#github, ul.item-list li:hover div#steam {
@@ -108,11 +113,11 @@ ul.item-list li:hover div#github, ul.item-list li:hover div#steam {
 }
 
 ul.item-list li:hover div#twitter, ul.item-list li:hover div#skype {
-	background-color: rgb(40,185,185);
+	background-color: rgb(0,175,240);
 }
 
 ul.item-list li:hover div#stack_overflow {
-	background-color: rgb(215,100,50);
+	background-color: rgb(255,140,60);
 }
 
 ul.item-list li:hover div#blog, ul.item-list li:hover div#personal_blog {
@@ -121,10 +126,6 @@ ul.item-list li:hover div#blog, ul.item-list li:hover div#personal_blog {
 
 ul.item-list li:hover div#reddit {
 	background-color: rgb(130,170,200);
-}
-
-ul.item-list li:hover div#aim {
-	background-color: rgb(240,220,70);
 }
 
 /** Fancy stuff for the index page */
@@ -145,9 +146,18 @@ ul.item-list li:hover div#aim {
 	position: absolute;
 	background-color: #ddd;
 	text-align: center;
+	z-index: 50;
 }
 
 #center-name a {
 	position: relative;
 	line-height: 180px;
+	font-size: 16px;
+}
+
+.center-link {
+	position: absolute;
+	z-index: 30;
+	width: 125px;
+	text-align: center;
 }

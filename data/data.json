@@ -21,10 +21,22 @@
 							"fallback": "skype:aquackenbos?add"
 						},
 						{
-							"id": "aim",
-							"icon": "img/icons/aim.png",
-							"title": "AIM",
-							"fallback": "aim:goim?screenname=novax81"
+							"id": "google_plus",
+							"icon": "img/icons/gplus.png",
+							"title": "Google+",
+							"fallback": "https://plus.google.com/104721062711626400467/about"
+						},
+						{
+							"id": "linkedin",
+							"icon": "img/icons/linkedin.png",
+							"title": "LinkedIn",
+							"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
+						},
+						{	
+							"id": "twitter",
+							"icon": "img/icons/twitter.png",
+							"title": "Twitter",
+							"fallback": "https://twitter.com/aquackenbos"
 						}
 					]
 				}
@@ -42,19 +54,13 @@
 							"id": "google_plus",
 							"icon": "img/icons/gplus.png",
 							"title": "Google+",
-							"fallback": "https://plus.google.com/104721062711626400467/"
+							"fallback": "https://plus.google.com/104721062711626400467/about"
 						},
 						{
 							"id": "linkedin",
 							"icon": "img/icons/linkedin.png",
 							"title": "LinkedIn",
 							"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
-						},
-						{
-							"id": "facebook",
-							"icon": "img/icons/facebook.png",
-							"title": "Facebook",
-							"fallback": "https://facebook.com/AQuackenbos"
 						},
 						{
 							"id": "github",
@@ -115,6 +121,10 @@
 			"title": "Experience & Education"
 		},
 		{
+			"id": "projects",
+			"title": "Projects & Demos"
+		},
+		{
 			"id": "personal",
 			"title": "Personal",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",
@@ -122,6 +132,12 @@
 				{
 					"id": "personal",
 					"items": [
+						{
+							"id": "facebook",
+							"icon": "img/icons/facebook.png",
+							"title": "Facebook",
+							"fallback": "https://facebook.com/AQuackenbos"
+						},
 						{
 							"id": "youtube",
 							"icon": "img/icons/youtube.png",

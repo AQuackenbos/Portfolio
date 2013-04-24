@@ -47,6 +47,12 @@ Portfolio.IndexRoute = Ember.Route.extend({
 	},
 	deactivate: function() {
 		console.log('End Index');
+	},
+	renderTemplate: function() {
+		this.render("index", {
+			outlet: "indexnav",
+			into: "application"
+		});
 	}
 });
 
@@ -119,14 +125,64 @@ Portfolio.Router.map(function(){
 
 Portfolio.indexSetup = function() {
 	console.log('Setting up index page');
-	console.log('#center-name: '+$('#center-name').size());
 	
 	/* Move circle to center */
+	$('#center-name').center(false);
+	
 	/* "bounce" each link into position, sequentially maybe? */
+	Portfolio.positionLinks(true);
+	
 	/* set up an animation behind each link maybe? */
+		//@todo
+	 
 	/* set a resize listener to keep everything in place */
+	$(window).on('resize',function() { 
+		$('#center-name').center(false);
+		Portfolio.positionLinks(false);
+	});
 }
 
+Portfolio.positionLinks = function(animate){
+	var radius = 90;
+
+	var positionMultipliers = [
+		[0,-1.5,-0.5,0],
+		[1,-0.75,0,0],
+		[1,0.75,0,-0.5],
+		[0,1.5,-0.5,-0.5],
+		[-1,0.75,-1,-0.5],
+		[-1,-0.75,-1,0]
+	];
+	
+	$('.center-link').each(function(index,element){
+		$(element).center(false);
+		
+		var centerX = $(element).position().left + ($(element).outerWidth()/2);
+		var centerY = $(element).position().top + ($(element).outerHeight()/2);
+		
+		var multipliers = positionMultipliers[index];
+		
+		var newX = centerX+(radius*multipliers[0])+($(element).outerWidth()*multipliers[2]);
+		var newY = centerY+(radius*multipliers[1])+($(element).outerHeight()*multipliers[3]);
+		
+		if(animate)
+		{
+			$(element).delay(index*200).animate({
+				'top': newY,
+				'left': newX
+			},
+			500,
+			'easeOutBack');
+		}
+		else
+		{
+			$(element).css({
+				'top': newY,
+				'left': newX
+			});
+		}
+	});
+}
 
 //============ Onload jQuery
 
@@ -143,3 +199,17 @@ $(function(){
 		}
 	});
 });
+
+//============ jQuery additional functions
+jQuery.fn.center = function(parent) {
+    if (parent) {
+        parent = this.parent();
+    } else {
+        parent = window;
+    }
+    this.css({
+        "position": "absolute",
+        "top": ((($(parent).height() - this.outerHeight()) / 2) + $(parent).scrollTop() + "px"),
+        "left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollLeft() + "px")
+    });
+};
