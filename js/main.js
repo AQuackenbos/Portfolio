@@ -95,6 +95,7 @@ Portfolio.ItemView = Ember.View.extend({
 		return "item-preview "+item.previewClass;
 	},
 	click: function(e){
+		//Stopgap until styles for mobile full descriptions exist
 		if(window.isMobile || !this.item.description) {
 			window.location.href = this.item.fallback;
 			return;
