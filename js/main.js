@@ -44,9 +44,11 @@ Portfolio.IndexRoute = Ember.Route.extend({
 	},
 	activate: function() {
 		console.log('Index');
+		$("body").addClass("index");
 	},
 	deactivate: function() {
 		console.log('End Index');
+		$("body").removeClass("index");
 	},
 	renderTemplate: function() {
 		this.render("index", {
@@ -78,6 +80,7 @@ Portfolio.IndexView = Ember.View.extend({
     didInsertElement: function(){
 		$('#page-nav,#col-left').fadeOut('fast');
 		Portfolio.indexSetup();
+		$("body").css('background-color','#999');
     }
 });
 
@@ -85,6 +88,7 @@ Portfolio.PageView = Ember.View.extend({
     didInsertElement: function(){
 		$('#page-nav,#col-left').fadeIn('fast');
         this.$().hide().fadeIn('slow');
+		$("body").css('background-color',this.controller.content.background);
     }
 });
 
@@ -132,6 +136,63 @@ Portfolio.indexSetup = function() {
 	
 	/* "bounce" each link into position, sequentially maybe? */
 	Portfolio.positionLinks(true);
+	
+	var defaultColor = '#999';
+	
+	
+	
+	var backgroundTransforms = [
+		[100,60,-47,0,-550],
+		[111,21,19,125,-1371],
+		[0,40,0,580,1006],
+		[0,40,-52,-461,1045],
+		[0,-38,0,383,1000],
+		[21,58,-21,-386,-164]
+	];
+	
+	var transformStyles = [
+		'transform',
+		'-webkit-transform',
+		'-ms-transform'
+	];
+	
+	$('.indexlink').each(function(idx,item){
+		var link = $(this).find('.center-link');
+		var background = $(this).find('.link-bg');
+		var d = backgroundTransforms[idx];
+			
+		$(transformStyles).each(function(i,tag){
+			$(background).css(tag,'rotate('+d[0]+'deg) skew('+d[1]+'deg,'+d[2]+'deg) translate('+d[3]+'px,'+d[4]+'px)');
+		});
+		
+		$(background).css('background-color',defaultColor);
+		
+		$(background).on({
+			mouseenter: function() 
+			{
+				$(this).css('background-color',Portfolio.Pages.allPages[idx].background);
+			},
+			mouseleave: function()
+			{
+				$(this).css('background-color',defaultColor);
+			},
+			click: function()
+			{
+				$(this).parent().find('.center-link a').click();
+			}
+		});
+		
+		$(link).on({
+			mouseenter: function() 
+			{
+				$(this).parent().find('.link-bg').css('background-color',Portfolio.Pages.allPages[idx].background);
+			},
+			mouseleave: function()
+			{
+				$(this).parent().find('.link-bg').css('background-color',defaultColor);
+			}
+		});
+	});
 	
 	/* set up an animation behind each link maybe? */
 		//@todo
