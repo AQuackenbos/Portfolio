@@ -139,8 +139,6 @@ Portfolio.indexSetup = function() {
 	
 	var defaultColor = '#999';
 	
-	
-	
 	var backgroundTransforms = [
 		[100,60,-47,0,-550],
 		[111,21,19,125,-1371],
@@ -192,6 +190,11 @@ Portfolio.indexSetup = function() {
 				$(this).parent().find('.link-bg').css('background-color',defaultColor);
 			}
 		});
+		
+		if(window.isMobile)
+		{
+			$(background).css('background-color',Portfolio.Pages.allPages[idx].background);
+		}
 	});
 	
 	/* set up an animation behind each link maybe? */
