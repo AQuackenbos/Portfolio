@@ -5,6 +5,11 @@ body {
 	height: 100%;
 	font-family: 'Noto Sans', sans-serif;
 	color: #FFF;
+    -webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
 }
 
 #footer {
@@ -77,11 +82,11 @@ ul.item-list {
 
 ul.item-list li {
 	border-radius: 5px;
-    -webkit-transition: background-color 250ms linear;
-    -moz-transition: background-color 250ms linear;
-    -o-transition: background-color 250ms linear;
-    -ms-transition: background-color 250ms linear;
-    transition: background-color 250ms linear;
+    -webkit-transition: border 250ms linear,background-color 250ms linear;
+    -moz-transition: border 250ms linear,background-color 250ms linear;
+    -o-transition: border 250ms linear,background-color 250ms linear;
+    -ms-transition: border 250ms linear,background-color 250ms linear;
+    transition: border 250ms linear,background-color 250ms linear;
 }
 
 div.item-image {
@@ -109,7 +114,13 @@ ul.item-list li:hover div.item-image{
 #about ul.item-list li, #contact ul.item-list li, #personal ul.item-list li {
 	width: 50px;
 	float: left;
-	margin: 0px 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #333;
+}
+
+#about ul.item-list li:hover, #contact ul.item-list li:hover, #personal ul.item-list li:hover {
+	border: 1px solid #ccc;
 }
 
 #about ul.item-list li div.item-preview, #contact ul.item-list li div.item-preview, #personal ul.item-list li div.item-preview {
@@ -167,7 +178,7 @@ ul.item-list li:hover div#reddit {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-color: #999;
+	background-color: #ccc;
 	overflow: hidden;
 	z-index: 40;
 }
@@ -211,7 +222,7 @@ ul.item-list li:hover div#reddit {
 	z-index: 49;
 	width: 125px;
 	text-align: center;
-	text-shadow: 2px 2px 2px #000;
+	text-shadow: 1px 1px 3px #000;
 }
 
 .center-link a {
@@ -230,7 +241,7 @@ ul.item-list li:hover div#reddit {
 	bottom:50%;
 	right:50%;
 	z-index: 45;
-	background-color: #999;
+	background-color: #ccc;
     -webkit-transition: background-color 250ms linear;
     -moz-transition: background-color 250ms linear;
     -o-transition: background-color 250ms linear;

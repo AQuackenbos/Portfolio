@@ -137,7 +137,7 @@ Portfolio.indexSetup = function() {
 	/* "bounce" each link into position, sequentially maybe? */
 	Portfolio.positionLinks(true);
 	
-	var defaultColor = '#999';
+	var defaultColor = '#ccc';
 	
 	var backgroundTransforms = [
 		[100,60,-47,0,-550],
