@@ -133,20 +133,14 @@ Portfolio.indexSetup = function() {
 	
 	/* Move circle to center */
 	$('#center-name').center(false);
+	$('#center-glow').center(false);
 	
 	/* "bounce" each link into position, sequentially maybe? */
 	Portfolio.positionLinks(true);
 	
 	var defaultColor = '#ccc';
 	
-	var backgroundTransforms = [
-		[100,60,-47,0,-550],
-		[111,21,19,125,-1371],
-		[0,40,0,580,1006],
-		[0,40,-52,-461,1045],
-		[0,-38,0,383,1000],
-		[21,58,-21,-386,-164]
-	];
+	var startDeg = 60;
 	
 	var transformStyles = [
 		'transform',
@@ -154,13 +148,12 @@ Portfolio.indexSetup = function() {
 		'-ms-transform'
 	];
 	
-	$('.indexlink').each(function(idx,item){
+	$('.indexLink').each(function(idx,item){
 		var link = $(this).find('.center-link');
 		var background = $(this).find('.link-bg');
-		var d = backgroundTransforms[idx];
 			
 		$(transformStyles).each(function(i,tag){
-			$(background).css(tag,'rotate('+d[0]+'deg) skew('+d[1]+'deg,'+d[2]+'deg) translate('+d[3]+'px,'+d[4]+'px)');
+			$(background).css(tag,'rotate('+(startDeg + 60*idx)+'deg) skew(30deg)');
 		});
 		
 		$(background).css('background-color',defaultColor);
@@ -169,10 +162,14 @@ Portfolio.indexSetup = function() {
 			mouseenter: function() 
 			{
 				$(this).css('background-color',Portfolio.Pages.allPages[idx].background);
+				$(this).css('z-index','40');
+				$('#center-name a').css('text-shadow','0px 0px 6px '+Portfolio.Pages.allPages[idx].background+', 0px 0px 6px #FFF, 0px 0px 4px #FFF');
 			},
 			mouseleave: function()
 			{
 				$(this).css('background-color',defaultColor);
+				$(this).css('z-index','45');
+				$('#center-name a').css('text-shadow','none');
 			},
 			click: function()
 			{
@@ -184,10 +181,12 @@ Portfolio.indexSetup = function() {
 			mouseenter: function() 
 			{
 				$(this).parent().find('.link-bg').css('background-color',Portfolio.Pages.allPages[idx].background);
+				$(this).parent().find('.link-bg').css('z-index','40');
 			},
 			mouseleave: function()
 			{
 				$(this).parent().find('.link-bg').css('background-color',defaultColor);
+				$(this).parent().find('.link-bg').css('z-index','45');
 			}
 		});
 		
@@ -203,6 +202,7 @@ Portfolio.indexSetup = function() {
 	/* set a resize listener to keep everything in place */
 	$(window).on('resize',function() { 
 		$('#center-name').center(false);
+		$('#center-glow').center(false);
 		Portfolio.positionLinks(false);
 	});
 }

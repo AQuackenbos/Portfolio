@@ -28,8 +28,9 @@
 		<script type="text/x-handlebars" data-template-name="index">
 			<div id="index-container">
 				<div id="center-name">{{#linkTo "index"}}Andrew Quackenbos{{/linkTo}}</div>
+				<div id="center-glow">&nbsp;</div>
 				{{#each model}}
-					<div class="indexlink">
+					<div class="indexLink">
 						<div class="center-link" {{bindAttr id="id"}}>{{#linkTo "page" this}}{{title}}{{/linkTo}}</div>
 						<div class="link-bg">&nbsp;</div>
 					</div>
@@ -94,7 +95,9 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_left">
-			(_left)
+			<div id="left-content">
+				(_left)
+			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">

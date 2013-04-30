@@ -10,6 +10,7 @@ body {
     -o-transition: background-color 250ms linear;
     -ms-transition: background-color 250ms linear;
     transition: background-color 250ms linear;
+	background-color:#ccc;
 }
 
 #footer {
@@ -81,7 +82,6 @@ ul.item-list {
 }
 
 ul.item-list li {
-	border-radius: 5px;
     -webkit-transition: border 250ms linear,background-color 250ms linear;
     -moz-transition: border 250ms linear,background-color 250ms linear;
     -o-transition: border 250ms linear,background-color 250ms linear;
@@ -117,6 +117,7 @@ ul.item-list li:hover div.item-image{
 	margin-left: 10px;
 	margin-right: 10px;
 	border: 1px solid #333;
+	border-radius: 5px;
 }
 
 #about ul.item-list li:hover, #contact ul.item-list li:hover, #personal ul.item-list li:hover {
@@ -193,6 +194,17 @@ ul.item-list li:hover div#reddit {
 	z-index: 50;
 }
 
+#center-glow {
+	width: 180px;
+	height: 180px;
+	border-radius: 90px;
+	position: absolute;
+	text-align: center;
+	background-color: #000;
+	z-index: 42;
+	box-shadow: 0px 0px 3px 3px #FFF;
+}
+
 #center-name a {
 	cursor: default;
 	position: relative;
@@ -209,7 +221,7 @@ ul.item-list li:hover div#reddit {
 
 #center-name:hover a {
 	text-decoration: none;
-	text-shadow: 0px 0px 6px #00F, 0px 0px 6px #FFF, 0px 0px 4px #FFF;
+	text-shadow: 0px 0px 6px #00F, 0px 0px 6px #FFF, 0px 0px 4px #FFF !important;
     -webkit-transition: all 500ms linear;
     -moz-transition: all 500ms linear;
     -o-transition: all 500ms linear;
@@ -242,6 +254,9 @@ ul.item-list li:hover div#reddit {
 	right:50%;
 	z-index: 45;
 	background-color: #ccc;
+	transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
     -webkit-transition: background-color 250ms linear;
     -moz-transition: background-color 250ms linear;
     -o-transition: background-color 250ms linear;
