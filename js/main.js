@@ -65,6 +65,8 @@ Portfolio.PageRoute = Ember.Route.extend({
 	},
 	setupController: function(controller, model) {
 		controller.set('content',model);
+		controller.set('credits',Portfolio.Pages.find('credits'));
+		controller.set('picture','img/'+model.leftImage);
 	},
 	activate: function() {
 		console.log('Page');
@@ -89,6 +91,7 @@ Portfolio.PageView = Ember.View.extend({
 		$('#page-nav,#col-left').fadeIn('fast');
         this.$().hide().fadeIn('slow');
 		$("body").css('background-color',this.controller.content.background);
+		$("#left-image-main").attr('src',this.controller.content.picture);
     }
 });
 
@@ -138,8 +141,6 @@ Portfolio.indexSetup = function() {
 	/* "bounce" each link into position, sequentially maybe? */
 	Portfolio.positionLinks(true);
 	
-	var defaultColor = '#ccc';
-	
 	var startDeg = 60;
 	
 	var transformStyles = [
@@ -156,20 +157,22 @@ Portfolio.indexSetup = function() {
 			$(background).css(tag,'rotate('+(startDeg + 60*idx)+'deg) skew(30deg)');
 		});
 		
-		$(background).css('background-color',defaultColor);
+		$(background).css('background-color','');
 		
 		$(background).on({
 			mouseenter: function() 
 			{
 				$(this).css('background-color',Portfolio.Pages.allPages[idx].background);
 				$(this).css('z-index','40');
+				$('#center-name').css('background-image','url(img/index/'+Portfolio.Pages.allPages[idx].id+'.jpg)');
 				$('#center-name a').css('text-shadow','0px 0px 6px '+Portfolio.Pages.allPages[idx].background+', 0px 0px 6px #FFF, 0px 0px 4px #FFF');
 			},
 			mouseleave: function()
 			{
-				$(this).css('background-color',defaultColor);
+				$(this).css('background-color','');
 				$(this).css('z-index','45');
-				$('#center-name a').css('text-shadow','none');
+				$('#center-name').css('background-image','');
+				$('#center-name a').css('text-shadow','');
 			},
 			click: function()
 			{
@@ -182,11 +185,15 @@ Portfolio.indexSetup = function() {
 			{
 				$(this).parent().find('.link-bg').css('background-color',Portfolio.Pages.allPages[idx].background);
 				$(this).parent().find('.link-bg').css('z-index','40');
+				$('#center-name').css('background-image','url(img/index/'+Portfolio.Pages.allPages[idx].id+'.jpg)');
+				$('#center-name a').css('text-shadow','0px 0px 6px '+Portfolio.Pages.allPages[idx].background+', 0px 0px 6px #FFF, 0px 0px 4px #FFF');
 			},
 			mouseleave: function()
 			{
-				$(this).parent().find('.link-bg').css('background-color',defaultColor);
+				$(this).parent().find('.link-bg').css('background-color','');
 				$(this).parent().find('.link-bg').css('z-index','45');
+				$('#center-name').css('background-image','');
+				$('#center-name a').css('text-shadow','');
 			}
 		});
 		

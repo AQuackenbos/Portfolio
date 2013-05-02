@@ -67,6 +67,7 @@
 				{{/if}}
 				<div id="footer">
 					{{partial "footer"}}
+				</div>
 			</div>
 		</script>
 		
@@ -96,26 +97,32 @@
 		
 		<script type="text/x-handlebars" data-template-name="_left">
 			<div id="left-content">
-				(_left)
+				<img id="left-image-main" {{bindAttr src="this.model.picture"}}/>
 			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_nav">
 			<div class="navbar-inner">
 				<div class="container">
-					<ul class="nav">
-						<li class="name">{{#linkTo "index"}}Andrew Quackenbos{{/linkTo}}</li>
-						{{#each model}}
-							<li>{{#linkTo "page" this}}{{title}}{{/linkTo}}</li>
-						{{/each}}
-					</ul>
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					{{#linkTo "index" class="brand"}}Andrew Quackenbos{{/linkTo}}
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							{{#each model}}
+								<li>{{#linkTo "page" this}}{{title}}{{/linkTo}}</li>
+							{{/each}}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="_footer">
-			This page was created by Andrew Quackenbos, using <a href="http://emerjs.com">Ember.js</a>, 
-			<a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and <a href="http://handlebarsjs.com/">Handlebars</a>.  
+			This page was created by Andrew Quackenbos, using <a href="http://emberjs.com">Ember.js</a> along with several other tools as described {{#linkTo "page" this.credits}}on the credits page{{/linkTo}}</a>.  
 			The code is available at <a href="https://github.com/AQuackenbos/Portfolio">Github</a>.<br />
 			Icons adapted from <a href="http://www.iconfinder.com/iconsets/metro-uinvert-dock">metro-univert-dock</a>.
 		</script>
