@@ -126,7 +126,34 @@
 			"id": "experience",
 			"leftImage":"page/experience.png",
 			"title": "Experience & Education",
-			"background": "#2c3e50"
+			"background": "#2c3e50",
+			"description": "Experience, Education, bla bla..",
+			"itemGroups": [
+				{
+					"id": "education",
+					"title": "Education",
+					"description": "Education stuff, etc",
+					"items": [
+						{
+							"id": "shippensburg",
+							"icon": "img/icons/ship.png",
+							"title": "Shippensburg University",
+							"fallback": "http://ship.edu/",
+							"preview": "2006 - 2010, B.S. in Computer Science with a Software Engineering focus.",
+							"description": "Stuff about shippensburg...",
+							"images": [
+								{
+									"id": "image1",
+									"title": "Image 1",
+									"caption": "Image caption...".
+									"url": "img/entries/ship/1.jpg",
+									"link": "#optional"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"id": "credits",
