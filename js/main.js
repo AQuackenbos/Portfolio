@@ -98,21 +98,35 @@ Portfolio.PageView = Ember.View.extend({
 Portfolio.ItemView = Ember.View.extend({
 	item: null,
 	templateName: "item",
-	previewClass: function() {
-		return "item-preview "+item.previewClass;
-	},
+	descriptionElement: null,
 	click: function(e){
 		//Stopgap until styles for mobile full descriptions exist
 		if(window.isMobile || !this.item.description) {
 			window.location.href = this.item.fallback;
 			return;
 		}
-		
 		e.preventDefault();
-		this._openDescription();
+		
+		var targetLink = $(e.target).closest('a');
+		
+		if(targetLink.hasClass('item-link'))
+		{
+			console.log('Opening Description');
+			this.set('descriptionElement',targetLink.parent().find('.item-description'));
+			this._openDescription();
+		}
+		
+		if(targetLink.hasClass('close-description'))
+		{
+			console.log('Closing Description');
+			this._closeDescription();
+		}
 	},
 	_openDescription: function(){
-		console.log("..opening description..");
+		console.log(this.get('descriptionElement'));
+	},
+	_closeDescription: function(){
+		console.log(this.get('descriptionElement'));
 	}
 });
 

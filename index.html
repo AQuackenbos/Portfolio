@@ -72,8 +72,8 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="item">
-			<li {{bindAttr class="item.previewClass"}}>
-				<a {{bindAttr href="item.fallback"}}>
+			<li class="item-list-entry">
+				<a {{bindAttr href="item.fallback"}} class="item-link">
 					{{#if item.icon}}
 						<div class="item-image" {{bindAttr id="item.id"}}>
 							<img {{bindAttr src="item.icon"}}/>
@@ -88,10 +88,10 @@
 							<span class="item-desc">{{item.preview}}</span>
 						{{/if}}
 					</div>
-					<div class="item-description">
-						
-					</div>
 				</a>
+				<div class="item-description">
+					DESCRIPTION
+				</div>
 			</li>
 		</script>
 		

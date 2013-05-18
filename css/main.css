@@ -81,6 +81,24 @@ ul.item-list li {
     -o-transition: border 250ms linear,background-color 250ms linear;
     -ms-transition: border 250ms linear,background-color 250ms linear;
     transition: border 250ms linear,background-color 250ms linear;
+	height: 50px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+ul.item-list li a {
+	display: block;
+	width: 100%;
+	height: 50px;
+}
+
+ul.item-list li a:visited, ul.item-list li a:hover {
+	color: #08c;
+}
+
+ul.item-list li div.item-description {
+	position: absolute;
+	display: none;
 }
 
 div.item-image {
@@ -93,6 +111,13 @@ div.item-image {
     -o-transition: background-color 250ms linear;
     -ms-transition: background-color 250ms linear;
     transition: background-color 250ms linear;
+	float: left;
+}
+
+div.item-preview {
+	float: left;
+	margin-left: 10px;
+	padding-top: 5px;
 }
 
 ul.item-list li:hover {
