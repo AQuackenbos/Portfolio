@@ -90,6 +90,9 @@ Portfolio.PageView = Ember.View.extend({
     didInsertElement: function(){
 		$('#page-nav,#col-left').fadeIn('fast');
         this.$().hide().fadeIn('slow');
+		$('.nav li').css('background-color','');
+		$('.nav a.active').parent().css('background-color',this.controller.content.background);
+		$('.navbar-inner').css('border-color',this.controller.content.background);
 		$("body").css('background-color',this.controller.content.background);
 		$("#left-image-main").attr('src',this.controller.content.picture);
     }

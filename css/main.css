@@ -57,9 +57,30 @@ body.index {
     z-index: -1;  
 }
 
+.main-image-container {
+	height: 150px;
+	overflow: hidden;
+}
+
 .navbar-inverse .nav > .name > a {
 	font-size: 1.5em;
 	color: #FFF;
+}
+
+.nav li {
+    -webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+}
+
+.navbar-inner {
+    -webkit-transition: border-color 250ms linear;
+    -moz-transition: border-color 250ms linear;
+    -o-transition: border-color 250ms linear;
+    -ms-transition: border-color 250ms linear;
+    transition: border-color 250ms linear;
 }
 
 #footer {
@@ -191,10 +212,6 @@ ul.item-list li:hover div#reddit {
 
 /** Left area */
 
-#left-image-main {
-	box-shadow: 3px 3px 3px #000;
-}
-
 /** Fancy stuff for the index page */
 
 #index-container {
@@ -286,7 +303,7 @@ ul.item-list li:hover div#reddit {
 	bottom:50%;
 	right:50%;
 	z-index: 45;
-	background-color: #ccc;
+	background-color: #aaa;
 	transform-origin: 100% 100%;
     -moz-transform-origin: 100% 100%;
     -webkit-transform-origin: 100% 100%;
@@ -303,4 +320,9 @@ ul.item-list li:hover div#reddit {
     -o-transition: background-color 250ms linear;
     -ms-transition: background-color 250ms linear;
     transition: background-color 250ms linear;
+}
+
+#page-nav .navbar-inner {
+	box-shadow: none;
+	-webkit-box-shadow: none;
 }

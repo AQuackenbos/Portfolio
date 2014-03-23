@@ -5,7 +5,7 @@
 			"leftImage":"page/contact.jpg",
 			"title": "Contact Me",
 			"background": "#27ae60",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",
+			"description": "There are lots of ways to contact me.  Some better than others.  I'm always up to hear new opportunities, try my hand at something interesting, or just throw some ideas around.",
 			"itemGroups": [
 				{
 					"id": "contact",
@@ -26,7 +26,7 @@
 							"id": "google_plus",
 							"icon": "img/icons/gplus.png",
 							"title": "Google+",
-							"fallback": "https://plus.google.com/104721062711626400467/about"
+							"fallback": "https://plus.google.com/+AndrewQuackenbos/about"
 						},
 						{
 							"id": "linkedin",
@@ -58,7 +58,7 @@
 							"id": "google_plus",
 							"icon": "img/icons/gplus.png",
 							"title": "Google+",
-							"fallback": "https://plus.google.com/104721062711626400467/about"
+							"fallback": "https://plus.google.com/+AndrewQuackenbos/about"
 						},
 						{
 							"id": "linkedin",

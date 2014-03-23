@@ -17,9 +17,10 @@
 			</div>
 			<div class="container fill">
 				<div class="row">
+				<!--
 					<div class="span2" id="col-left" style="display:none">
 						{{partial "left"}}
-					</div>
+					</div> -->
 					{{outlet}}
 				</div>
 			</div>
@@ -39,7 +40,10 @@
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="page">
-			<div class="span10 filler" {{bindAttr id="id"}}>
+			<div class="span12 filler" {{bindAttr id="id"}}>
+				<div class="row main-image-container">
+					<img class="span12 main-image" {{bindAttr src="this.model.picture"}}/>
+				</div>
 				{{#if title}}
 					<h3>{{title}}</h3>
 				{{else}}
