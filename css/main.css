@@ -113,8 +113,8 @@ ul.item-list li a {
 	height: 50px;
 }
 
-ul.item-list li a:visited, ul.item-list li a:hover {
-	color: #08c;
+ul.item-list li a, ul.item-list li a:visited, ul.item-list li a:hover {
+	color: #eee;
 }
 
 ul.item-list li div.item-description {
@@ -142,7 +142,7 @@ div.item-preview {
 }
 
 ul.item-list li:hover {
-	background-color: #ccc;
+	background-color: #111;
 }
 
 ul.item-list li:hover div.item-image{

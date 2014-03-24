@@ -66,7 +66,10 @@ Portfolio.PageRoute = Ember.Route.extend({
 	setupController: function(controller, model) {
 		controller.set('content',model);
 		controller.set('credits',Portfolio.Pages.find('credits'));
-		controller.set('picture','img/'+model.leftImage);
+		if(model.leftImage)
+		{
+			controller.set('picture','img/'+model.leftImage);
+		}
 	},
 	activate: function() {
 		console.log('Page');

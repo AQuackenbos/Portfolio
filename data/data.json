@@ -32,7 +32,7 @@
 							"id": "linkedin",
 							"icon": "img/icons/linkedin.png",
 							"title": "LinkedIn",
-							"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
+							"fallback": "http://www.linkedin.com/in/aquackenbos"
 						},
 						{	
 							"id": "twitter",
@@ -64,7 +64,7 @@
 							"id": "linkedin",
 							"icon": "img/icons/linkedin.png",
 							"title": "LinkedIn",
-							"fallback": "http://www.linkedin.com/pub/andrew-quackenbos/15/3b9/b8"
+							"fallback": "http://www.linkedin.com/in/aquackenbos"
 						},
 						{
 							"id": "github",
@@ -99,16 +99,16 @@
 			"leftImage":"page/skills.jpg",
 			"title": "Skills & Certifications",
 			"background": "#8e44ad",
-			"description": "...",
+			"description": "I've worked with a lot of different tools, languages, and frameworks.  Listed here are just those I'm most familiar with, or use often and recently.  However, I have a knack for picking up new things and adapting quickly; I'm never afraid to try something new, or leap head-first into a new idea.",
 			"itemGroups": [
 				{
 					"id": "skills",
 					"title": "Skills",
-					"description": "..!",
+					"description": "",
 					"items": [
 						{
 							"id": "php",
-							"icon": "img/icons/php.png",
+							"icon": "",
 							"title": "PHP",
 							"fallback": "#"
 						}
@@ -117,28 +117,35 @@
 				{
 					"id": "certifications",
 					"title": "Certifications",
-					"description": "..?",
-					"items": []
+					"description": "",
+					"items": [
+						{
+							"id": "magento-certified",
+							"icon": "",
+							"title": "Magento Certified Developer Plus",
+							"fallback": "#linktoprofileonmage"
+						}
+					]
 				}
 			]
 		},
 		{
 			"id": "experience",
-			"leftImage":"page/experience.png",
+			"leftImage":"",
 			"title": "Experience & Education",
 			"background": "#2c3e50",
-			"description": "Experience, Education, bla bla..",
+			"description": "While attending Shippensburg University, I worked at two separate internships to gain a wider variety of experience.  Since graduating, I have been employed and highly recognized for my talents and expertise by my peers.",
 			"itemGroups": [
 				{
 					"id": "education",
 					"title": "Education",
-					"description": "Education stuff, etc",
+					"description": "",
 					"items": [
 						{
 							"id": "shippensburg",
-							"icon": "img/icons/ship.png",
+							"icon": "",
 							"title": "Shippensburg University",
-							"fallback": "http://ship.edu/",
+							"fallback": "https://web.cs.ship.edu/",
 							"preview": "2006 - 2010, B.S. in Computer Science with a Software Engineering focus.",
 							"description": "Stuff about shippensburg...",
 							"images": [
@@ -147,7 +154,7 @@
 									"title": "Image 1",
 									"caption": "Image caption...",
 									"url": "img/entries/ship/1.jpg",
-									"link": "#optional"
+									"link": "#large"
 								}
 							]
 						}
@@ -157,17 +164,35 @@
 		},
 		{
 			"id": "credits",
-			"leftImage":"page/credits.png",
+			"leftImage":"",
 			"title": "Credits",
 			"background": "#16a085",
-			"description": "Use swipebox and other cool shit from unheap"
+			"description": "Note: Use swipebox and other cool shit from unheap",
+			"itemGroups": [
+				{
+					"id":"frameworks",
+					"title":"Frameworks",
+					"items":[
+						{
+							"id":"emberjs",
+							"title":"Ember.js",
+							"fallback":"#"
+						},
+						{
+							"id":"jquery",
+							"title":"jQuery",
+							"fallback":"#"
+						}
+					]
+				}
+			]
 		},
 		{
 			"id": "personal",
 			"leftImage":"page/personal.jpg",
 			"title": "Personal",
 			"background": "#2980b9",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum semper ornare. Cras ac porttitor dui. Vivamus in gravida lacus. In at orci eu odio aliquam tempus. Nullam semper aliquet fringilla. Aliquam erat volutpat. Sed nec ultrices sapien. In non erat orci, ac iaculis urna. Aenean sollicitudin justo eget tortor volutpat ornare.",
+			"description": "I'm not always acting professional.  I do a ton of messing around on Steam and reddit; my big hobbies are video games, board games, and RPGs.",
 			"itemGroups": [
 				{
 					"id": "personal",
@@ -195,12 +220,6 @@
 							"icon": "img/icons/steam.png",
 							"title": "Steam",
 							"fallback": "http://steamcommunity.com/id/novax81"
-						},
-						{
-							"id": "personal_blog",
-							"icon": "img/icons/wordpress.png",
-							"title": "Personal Blog",
-							"fallback": "http://novax81.com/"
 						}
 					]
 				}

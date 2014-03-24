@@ -41,9 +41,11 @@
 		
 		<script type="text/x-handlebars" data-template-name="page">
 			<div class="span12 filler" {{bindAttr id="id"}}>
+				{{#if this.model.picture}}
 				<div class="row main-image-container">
 					<img class="span12 main-image" {{bindAttr src="this.model.picture"}}/>
 				</div>
+				{{/if}}
 				{{#if title}}
 					<h3>{{title}}</h3>
 				{{else}}
