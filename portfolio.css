@@ -36,7 +36,6 @@ hr {
 	position: relative;
 	height: 100%;
 	width: 100%;
-	max-width:1080px;
 	margin: 0 auto;
 	background: #EEE;
 	box-shadow: 0px 1px 1px 1px #000;
@@ -47,7 +46,7 @@ hr {
 	display: block;
 	height: 100%;
 	z-index: 40;
-	background-image: url(img/profile-labeled.png);
+	background-image: url(img/profile-cat.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -63,8 +62,8 @@ hr {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	margin: 0;
 	font-size: 0.9em;
-	text-shadow: 0px 0px 2px #FFF;
-	color: #000;
+	text-shadow: 0px 0px 2px #000;
+	color: #FFF;
 }
 
 .link-container {
@@ -125,8 +124,8 @@ hr {
 
 .bg {
 	position: absolute;
-	height: 1000px;
-	width: 1000px;
+	height: 2000px;
+	width: 2000px;
 	bottom:25%;
 	right:50%;
 	z-index: 45;
@@ -135,11 +134,6 @@ hr {
 	transform-origin: 100% 100%;
     -moz-transform-origin: 100% 100%;
     -webkit-transform-origin: 100% 100%;
-    -webkit-transition: 250ms linear;
-    -moz-transition: 250ms linear;
-    -o-transition: 250ms linear;
-    -ms-transition: 250ms linear;
-    transition: 250ms linear;
 	opacity: 0.5;
 }
 
@@ -191,16 +185,7 @@ hr {
     transition: 250ms linear;
 	color: #FFF;
 	padding-right:20px;
-}
-
-.details-bg {
-	position: fixed;
-	width: 100%;
-	max-width:1080px;
-	height: 100%;
-	opacity: 0.7;
-	background: #000;
-	z-index: -50;
+	background: rgba(0,0,0,.7);
 }
 
 #toggle { 
