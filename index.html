@@ -3,31 +3,98 @@
   <head>
     <meta charset="utf-8">
     <title>Andrew Quackenbos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
     <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/0d41ee9a60.js" crossorigin="anonymous"></script>
+    <style>
+      #primary-image {
+        opacity: 1;
+        transition: opacity 1000ms;
+      }
+      
+      .card {
+        min-height: 100vh;
+        position: relative;
+      }
+      
+      .card-image {
+        margin-bottom: -1em;
+      }
+      
+      .card-footer {
+        border-bottom: 1px solid #fff;
+      }
+      
+      /* This will override a bunch of Bulma stuff so I'm going to use !important sometimes */
+      /* Don't be dumb and actually do this though. */
+      html, body, .container {
+        background: #202020;
+      }
+      
+      .card {
+        color: #d9d9d9;
+        background: #454545;
+      }
+      
+      strong, .title, .subtitle {
+        color: #d9d9d9 !important;
+      }
+      
+      a.card-footer-item {
+        color: #dedede !important;
+        background: #454545 !important;
+      }
+      
+      a.card-footer-item:hover {
+        color: #202020 !important;
+        background: #d9d9d9 !important;
+      }
+    </style>
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-half-fullhd is-7-widescreen is-two-thirds-desktop is-full-mobile is-three-quarters-tablet">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image">
-                  <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+    <section class="section p-0 my-0">
+      <div class="container my-0">
+        <div class="columns is-centered my-0">
+          <div class="column is-half-fullhd is-7-widescreen is-two-thirds-desktop is-full-mobile is-three-quarters-tablet my-0 py-0">
+            <div class="card my-0">
+              <div class="card-image">              
+                <figure class="image is-1by1">
+                  <img id="primary-image" src="images/drew3.png" alt="Andrew Quackenbos"/>
                 </figure>
               </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
+              <div class="card-content mb-0 px-0">
+                  <div class="media-content pb-1 px-5">
                     <p class="title is-4">Andrew Quackenbos</p>
-                    <p class="subtitle is-6">Simple but effective.</p>
+                    <p class="subtitle is-5">Simple but effective.</p>
                   </div>
-                </div>
-
-                <div class="content">
-                  Test text.
+                  <div class="card-footer my-4 px-0">
+                    <a href="https://linkedin.com/in/aquackenbos" target="_blank" class="card-footer-item">
+                      <span class="icon"><i class="fab fa-linkedin"></i></span>
+                      LinkedIn
+                    </a>
+                    <a href="https://github.com/AQuackenbos" target="_blank" class="card-footer-item">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      GitHub
+                    </a>
+                    <a href="mailto:andrew@quackenbos.me" target="_blank" class="card-footer-item">
+                      <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                      Email
+                    </a>
+                    <a href="/resume.html" target="_blank" class="card-footer-item">
+                      <span class="icon"><i class="fas fa-file-alt"></i></span>
+                      Resume
+                    </a>
+                  </div>
+                  <div class="content px-5">
+                    <strong>Technical Partner at Sitesquad LLC.</strong>
+                  </div>
+                  <div class="content px-5">
+                    Over 10 years experience in architecting, building, and implementing modern web applications in Javascript and PHP at every level of a full stack environment.
+                  </div>
+                  <div class="content is-size-7 px-5">
+                    Currently <strong>open</strong> to interesting opportunities.
+                  </div>
                 </div>
               </div>
             </div>
@@ -35,6 +102,37 @@
         </div>
       </div>
     </section>
+    <script>
+    var images = [
+      'drew3',
+      'drew_cece',
+      'drew_kiersten2',
+      'drew_cece2',
+    ]
+    var transitioning = false
+    var img = document.querySelector('#primary-image')
+    var lastImage = 0
+    var transitionDelay = 1000
+    img.onload = function() { img.style.opacity = 1 }
+    
+    function changeImage() {
+      if(transitioning) return
+      transitioning = true
+      
+      if(++lastImage >= images.length)
+        lastImage = 0
+      
+      img.style.opacity = 0;
+      setTimeout(function() {
+        img.src = 'images/' + images[lastImage] + '.png'
+        initLoad = false
+        transitioning = false
+      }, transitionDelay);
+    }
+    
+    setInterval(changeImage, 5000)
+    
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109148272-1"></script>
     <script>
